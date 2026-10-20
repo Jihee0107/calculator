@@ -263,6 +263,9 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .sheet-box h2{margin:0;font-size:15px}
 .sheet-box img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
 .sheet .hint{text-align:left}
+/* 저장 뒤 아래에 잠깐 뜨는 알림 (갤럭시) */
+.toast{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:15;width:min(448px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 10px 10px 16px;border-radius:14px;background:var(--ink);color:#fff;font-size:13.5px;line-height:1.4;box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.toast button{flex:none;height:34px;padding:0 12px;border:0;border-radius:9px;background:#fff;color:var(--ink);font-size:13px;font-weight:700}
 </style>
 </head>
 <body>
@@ -486,11 +489,14 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
   <div class="sheet-box">
     <h2 id="sheetTitle">이미지</h2>
-    <p class="hint">이 화면에서는 바로 저장이 안 돼요. 아래 이미지를 <b>꾹 눌러서 '사진 앱에 저장'</b>을 눌러주세요.</p>
+    <p class="hint" id="sheetHint"></p>
     <img id="sheetImg" alt="저장할 이미지">
+    <button class="btn primary" type="button" id="sheetOpen" hidden>다른 브라우저로 열기</button>
     <button class="btn" type="button" id="sheetClose">닫기</button>
   </div>
 </div>
+
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn">이미지로 보기</button></div>
 
 <!--ASSETS-->
 <script>
@@ -989,23 +995,35 @@ function crop(cv, h) {
   return out;
 }
 
-/* 저장: 아이폰은 바로 공유 창(→ 이미지 저장), 그 밖은 바로 내려받기 (안드로이드는 갤러리 Download 앨범) */
-const IS_IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+/* 저장 — 휴대폰마다 다르게
+   · 아이폰: 공유 창 → '이미지 저장'
+   · 갤럭시(안드로이드): 이미지 주소(data:)로 바로 내려받기 → 갤러리 'Download' 앨범
+     (blob 주소로 받으면 삼성 인터넷 등에서 '지원하지 않는 파일 형식'이 떠서 바꿈) + 안 될 때를 위해 '이미지로 보기' 알림
+   · 카톡·네이버 같은 앱 안 브라우저: 내려받기가 막혀 있어서 이미지를 띄워 꾹 눌러 저장 / 다른 브라우저로 열기
+   · PC: 바로 내려받기 */
+const UA = navigator.userAgent;
+const IS_IOS = /iP(hone|ad|od)/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_ANDROID = /Android/i.test(UA);
+const IS_KAKAO = /KAKAOTALK/i.test(UA);
+const IN_APP = IS_KAKAO || /NAVER\(inapp|Instagram|FBAN|FBAV|FB_IAB|Line\/|DaumApps|everytimeApp|BAND\//i.test(UA);
 async function saveImage(btn, label, img, title) {
+  if (IN_APP) { showSheet(img.url, title); return; }
   if (IS_IOS) {
     if (navigator.canShare && navigator.canShare({ files: [img.file] })) {
       try { await navigator.share({ files: [img.file] }); }
       catch (e) { if (e.name !== 'AbortError') showSheet(img.url, title); } // 공유 창이 안 열리면 꾹 눌러 저장하는 화면으로
-    } else showSheet(img.url, title); // 카톡 안 브라우저처럼 공유가 안 되는 곳
+    } else showSheet(img.url, title);
     return;
   }
-  const url = URL.createObjectURL(img.file), a = document.createElement('a');
-  a.href = url; a.download = img.file.name;
+  const a = document.createElement('a');
+  a.href = IS_ANDROID ? img.url : URL.createObjectURL(img.file);
+  a.download = img.file.name;
   document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  if (!IS_ANDROID) setTimeout(() => URL.revokeObjectURL(a.href), 10000);
   btn.textContent = '저장됐어요 ✓';
   clearTimeout(btn.t);
   btn.t = setTimeout(() => { btn.textContent = label(); }, 2000);
+  if (IS_ANDROID) showToast("갤러리 'Download' 앨범에 저장했어요. 안 보이면 →", () => showSheet(img.url, title));
 }
 async function toImage(canvas, name) {
   const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
@@ -1213,7 +1231,13 @@ const sheet = $('#sheet');
 let sheetFrom = null;
 function showSheet(url, title) {
   sheetFrom = document.activeElement;
+  $('#toast').hidden = true;
   $('#sheetTitle').textContent = title || '이미지';
+  const canOpen = IN_APP && (IS_KAKAO || IS_ANDROID); // 카톡(아이폰·갤럭시), 갤럭시의 다른 앱 → 바깥 브라우저로 열 수 있음
+  $('#sheetHint').innerHTML = `${IN_APP ? '이 앱 안에서는 바로 저장이 안 돼요. ' : ''}아래 이미지를 <b>꾹 눌러서 '${IS_IOS ? '사진 앱에 저장' : '이미지 저장'}'</b>을 눌러주세요.` +
+    (canOpen ? `<br>안 되면 아래 버튼으로 ${IS_IOS ? 'Safari' : '크롬·삼성 인터넷'}에서 열어 주세요. (입력한 내용은 새 화면에 없을 수 있어요)` : '');
+  $('#sheetOpen').hidden = !canOpen;
+  $('#sheetOpen').textContent = `${IS_IOS ? 'Safari' : '크롬·삼성 인터넷'}로 열기`;
   $('#sheetImg').src = url;
   sheet.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -1222,6 +1246,23 @@ function showSheet(url, title) {
 }
 function closeSheet() { sheet.hidden = true; document.body.style.overflow = ''; if (sheetFrom) sheetFrom.focus(); }
 $('#sheetClose').addEventListener('click', closeSheet);
+// 앱 안 브라우저 → 바깥 브라우저로: 카톡은 카톡 전용 주소, 갤럭시는 기본 브라우저 고르기
+$('#sheetOpen').addEventListener('click', () => {
+  const u = location.href;
+  location.href = IS_KAKAO ? `kakaotalk://web/openExternal?url=${encodeURIComponent(u)}`
+    : `intent://${u.replace(/^https?:\/\//, '')}#Intent;scheme=${location.protocol.replace(':', '')};end`;
+});
+/* 아래 알림 (7초 뒤 사라짐) */
+let toastT, toastFn;
+function showToast(msg, fn) {
+  $('#toastMsg').textContent = msg;
+  toastFn = fn;
+  $('#toastBtn').hidden = !fn;
+  $('#toast').hidden = false;
+  clearTimeout(toastT);
+  toastT = setTimeout(() => { $('#toast').hidden = true; }, 7000);
+}
+$('#toastBtn').addEventListener('click', () => { $('#toast').hidden = true; if (toastFn) toastFn(); });
 sheet.addEventListener('click', e => { if (e.target === sheet) closeSheet(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !sheet.hidden) closeSheet(); });
 
