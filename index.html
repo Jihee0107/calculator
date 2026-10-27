@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -28,88 +28,93 @@ button,input,textarea,select{font:inherit;color:inherit}
 button{cursor:pointer}
 
 /* 버튼 */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:48px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:var(--paper);font-weight:700;font-size:15.5px;transition:background .15s,opacity .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:44px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:var(--paper);font-weight:700;font-size:15.5px;transition:background .15s,opacity .15s}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 .btn.primary{background:var(--green);border-color:var(--green);color:#fff}
 .btn.primary:hover{background:var(--green-deep)}
 .btn.primary.done{background:var(--ink);border-color:var(--ink)}
 .btn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
 .btn.dark:hover{background:#000}
-.btn.add{width:100%;height:40px;margin-top:8px;border-style:dashed;background:transparent;color:var(--ink)}
+.btn.add{width:100%;height:38px;margin-top:6px;border-style:dashed;background:transparent;color:var(--ink)}
 .btn.add:hover{background:#fff}
 
 /* 휴대폰 폭 한 줄 — PC에서도 같은 폭으로 가운데에 */
 .top,.tabs,.wrap{max-width:480px;margin:0 auto}
-.top{padding:12px 14px 0;padding-top:max(12px,env(safe-area-inset-top))}
-.top h1{font-size:18px;margin:0;color:var(--ink);line-height:1.3}
-.top p{margin:0;font-size:12.5px;color:var(--muted)}
-.wrap{padding:8px 14px 32px;display:grid;gap:8px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
-.card h2{font-size:15px;margin:0 0 9px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:8px;line-height:1.3}
+.top{padding:8px 14px 0;padding-top:max(8px,env(safe-area-inset-top))}
+.top h1{font-size:17px;margin:0;color:var(--ink);line-height:1.3}
+.wrap{padding:6px 14px 24px;display:grid;gap:6px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px}
+.card h2{font-size:15px;margin:0 0 7px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:8px;line-height:1.3}
 .card h2 > span{display:flex;align-items:center;gap:8px}
 .card h2 i{flex:none;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-size:12px;display:grid;place-items:center}
 .card h2 small{font-weight:400;color:var(--muted);font-size:12px;text-align:right}
 .card h2 .show{font-size:15.5px;color:var(--green);font-variant-numeric:tabular-nums}
 .card h2 .show.minus{color:var(--bad)}
-.note{margin:6px 2px 0;font-size:12.5px;color:var(--muted)}
+.note{margin:5px 2px 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
 .note:empty{display:none}
-.sub-h{margin:10px 2px 6px;font-size:13px;font-weight:700;color:var(--ink)}
+.sub-h{margin:8px 2px 5px;font-size:13px;font-weight:700;color:var(--ink)}
+.sub-h small{font-weight:500;color:var(--muted)}
+/* 제목 옆에 바로 입력 (시공일) */
+.card.inline{display:flex;align-items:center;gap:10px}
+.card.inline h2{flex:none;margin:0}
+.card.inline .date-row{flex:1;min-width:0;grid-template-columns:minmax(0,1fr) 60px;gap:6px}
 
 /* 탭 — 위에 붙어 있음 */
-.tabs{position:sticky;top:0;z-index:5;background:var(--ground);padding:8px 14px 2px}
-.tabs-in{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:4px;background:var(--sand);padding:4px;border-radius:12px}
-.tabs button{height:38px;padding:0 2px;border:0;background:none;border-radius:9px;font-size:14.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.tabs{position:sticky;top:0;z-index:5;background:var(--ground);padding:6px 14px 2px}
+.tabs-in{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:4px;background:var(--sand);padding:3px;border-radius:12px}
+.tabs button{height:36px;padding:0 2px;border:0;background:none;border-radius:9px;font-size:14.5px;font-weight:700;color:var(--muted);white-space:nowrap}
 .tabs button:hover{color:var(--ink)}
 .tabs button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
 
 /* 입력 칸 */
 input,textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px}
-input,select{height:42px;padding:0 10px}
-textarea{display:block;min-height:72px;padding:10px;line-height:1.5;resize:vertical}
+input,select{height:40px;padding:0 10px}
+textarea{display:block;min-height:60px;padding:8px 10px;line-height:1.5;resize:vertical}
 input:focus,textarea:focus,select:focus{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
 input::placeholder,textarea::placeholder{color:#A9AEAA}
 input:focus::placeholder,textarea:focus::placeholder{color:transparent} /* 누르면 예시 글자 사라짐 */
 .num{text-align:right;font-variant-numeric:tabular-nums}
 input.need{border-color:#D9A93A;background:#FFF8E6}
-.field{display:grid;gap:3px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.field{display:grid;gap:2px;font-size:12.5px;font-weight:600;line-height:1.3;color:var(--muted)}
 
 /* 1) 매트 선택 — 여러 개 고르기 */
 .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.chip{position:relative;min-height:46px;padding:10px 4px 4px;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.chip{position:relative;min-height:42px;padding:8px 4px 3px;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
 .chip:hover{border-color:var(--hover)}
 .chip b{font-size:16px;font-variant-numeric:tabular-nums;line-height:1.3}
 .chip::after{content:'✓';position:absolute;top:4px;right:4px;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:800;line-height:1;color:transparent}
 .chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
 .chip[aria-pressed=true]::after{background:#fff;border-color:#fff;color:var(--green)}
 
-/* 수량: 매트 | − 수량 + */
-.qtys:not(:empty){margin-top:8px}
-.qrow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:6px 0;border-top:1px solid var(--line)}
-.qname b{display:block;font-size:16.5px;font-variant-numeric:tabular-nums;line-height:1.3}
-.qname small{display:block;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+/* 수량: 매트 금액 / 장당 | − 수량 + */
+.qtys{margin-top:4px}
+.qrow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:4px 0;border-top:1px solid var(--line)}
+.qname{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:8px;min-width:0}
+.qname b{font-size:16.5px;font-variant-numeric:tabular-nums;line-height:1.3}
+.qname small{order:2;flex-basis:100%;font-size:12.5px;line-height:1.35;color:var(--muted);font-variant-numeric:tabular-nums}
 .qname small.no{color:var(--warn-ink)}
-.qname .qa{display:block;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.qname .qa{font-size:14px;font-weight:700;line-height:1.3;color:var(--green-deep);font-variant-numeric:tabular-nums}
 .qname .qa:empty{display:none}
-.step{display:grid;grid-template-columns:40px 60px 40px;gap:4px}
-.step button{height:40px;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:22px;line-height:1;color:var(--ink)}
+.step{display:grid;grid-template-columns:38px 56px 38px;gap:4px}
+.step button{height:38px;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:22px;line-height:1;color:var(--ink)}
 .step button:active{background:var(--sand)}
-.step input{height:40px;padding:0 4px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
-.pick-hint{margin:8px 0 0;font-size:13px;color:var(--muted);text-align:center}
+.step input{height:38px;padding:0 4px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.pick-hint{margin:6px 0 0;font-size:13px;color:var(--muted);text-align:center}
 
 /* 고르는 버튼 (시공·출장비 / 할인 / 매트사 / 부가세 …) */
 .opts{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:6px}
-.opt{height:40px;padding:0 2px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15px;font-weight:700;white-space:nowrap;transition:background .15s,border-color .15s}
+.opt{height:38px;padding:0 2px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15px;font-weight:700;white-space:nowrap;transition:background .15s,border-color .15s}
 .opt:hover{border-color:var(--hover)}
 .opt[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
-.opts.big .opt{height:46px;font-size:16.5px}
+.opts.big .opt{height:42px;font-size:16.5px}
 .custom{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;margin-top:6px;font-weight:700;color:var(--muted)}
 /* 할인 직접 입력: 원 / % 바꾸기 */
-.unit{display:grid;grid-template-columns:46px 46px;height:42px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.unit{display:grid;grid-template-columns:46px 46px;height:40px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
 .unit button{border:0;background:none;font-size:15px;font-weight:700;color:var(--muted)}
 .unit button[aria-pressed=true]{background:var(--green);color:#fff}
 /* 부가세: 버튼 3개 + 옆에 직접(%) 칸 */
 .vat-opts{grid-template-columns:1.25fr 1.05fr 1fr 1fr}
-.vin{display:flex;align-items:center;gap:2px;height:40px;padding:0 9px 0 4px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;color:var(--muted);transition:background .15s,border-color .15s}
+.vin{display:flex;align-items:center;gap:2px;height:38px;padding:0 9px 0 4px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;color:var(--muted);transition:background .15s,border-color .15s}
 .vin input{flex:1;min-width:0;height:100%;padding:0;border:0;background:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 .vin input:focus{outline:0}
 .vin:focus-within{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
@@ -124,43 +129,43 @@ input.need{border-color:#D9A93A;background:#FFF8E6}
 .tsum dd{margin:0;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
 .tsum .minus dd{color:var(--bad)}
 .tsum .sub{border-top:1px dashed #A9C7B6;padding-top:4px;margin-top:2px}
-.tbig{margin-top:8px;padding-top:8px;border-top:1px solid #A9C7B6;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tbig{margin-top:6px;padding-top:6px;border-top:1px solid #A9C7B6;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .tbig span{font-weight:800;color:var(--green-deep)}
 .tbig small{display:block;font-size:12px;font-weight:500;color:var(--muted)}
 .tbig b{font-size:24px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
 
 /* 거래명세서 만들기 구분 */
-.divider{display:flex;align-items:center;gap:10px;margin:4px 4px 0;font-size:13.5px;font-weight:800;color:var(--ink)}
+.divider{display:flex;align-items:center;gap:10px;margin:2px 4px 0;font-size:13.5px;font-weight:800;color:var(--ink)}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:#C9CECA}
 
 /* 날짜 */
 .date-row{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:8px}
-.date-field + .date-field{margin-top:8px}
-input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;line-height:40px;text-align:left;font-variant-numeric:tabular-nums}
+.date-field + .date-field{margin-top:6px}
+input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;line-height:38px;text-align:left;font-variant-numeric:tabular-nums}
 input[type=date]::-webkit-date-and-time-value{text-align:left}
 
 /* 체크 (결제 방법 · 시공범위) — 여러 개 */
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.chk{display:flex;align-items:center;gap:8px;height:42px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14.5px;font-weight:700;white-space:nowrap;letter-spacing:-.2px;text-align:left;transition:background .15s,border-color .15s}
+.chk{display:flex;align-items:center;gap:8px;height:40px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14.5px;font-weight:700;white-space:nowrap;letter-spacing:-.2px;text-align:left;transition:background .15s,border-color .15s}
 .chk:hover{border-color:var(--hover)}
 .chk .box{flex:none;width:20px;height:20px;border-radius:5px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:800;line-height:1;color:transparent}
 .chk[aria-pressed=true]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:var(--green-soft)}
 .chk[aria-pressed=true] .box{background:var(--green);border-color:var(--green);color:#fff}
 .scopes{grid-template-columns:repeat(4,minmax(0,1fr))}
-.scopes .chk{height:38px;padding:0 8px;gap:6px}
+.scopes .chk{height:36px;padding:0 8px;gap:6px}
 
 /* 입금 계좌 */
 .accts{display:grid;gap:6px}
-.acct{display:grid;grid-template-columns:20px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;min-height:46px;padding:5px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;transition:background .15s,border-color .15s}
+.acct{display:grid;grid-template-columns:20px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;min-height:42px;padding:4px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;transition:background .15s,border-color .15s}
 .acct:hover{border-color:var(--hover)}
 .acct .dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:800;line-height:1;color:transparent}
-.acct small{display:block;font-size:12px;color:var(--muted);line-height:1.3}
-.acct b{display:block;font-size:15.5px;line-height:1.3}
+.acct small{display:block;font-size:12px;color:var(--muted);line-height:1.2}
+.acct b{display:block;font-size:15.5px;line-height:1.25}
 .acct .an{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
 .acct[aria-pressed=true]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:var(--green-soft)}
 .acct[aria-pressed=true] .dot{background:var(--green);border-color:var(--green);color:#fff}
 .acct-in,.cus{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.acct-in{margin-top:8px}
+.acct-in{margin-top:6px}
 .acct-in .full,.cus .full{grid-column:1/-1}
 
 /* 단가 없을 때 알림 */
@@ -168,9 +173,9 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .warn button{flex:none;height:34px;padding:0 12px;border:1px solid #D9B65E;border-radius:8px;background:#fff;font-size:13px;font-weight:700;color:var(--warn-ink)}
 
 /* 거래명세서 (화면) */
-.doc{box-shadow:0 2px 12px rgba(0,0,0,.05);padding:16px 14px 14px}
-.card .doc-title{display:block;margin:4px 0 0;padding-bottom:12px;text-align:center;font-size:21px;font-weight:800;letter-spacing:.3em;text-indent:.3em;color:var(--ink);border-bottom:3px double var(--ink)}
-.doc-date{margin:10px 2px 0;display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted)}
+.doc{box-shadow:0 2px 12px rgba(0,0,0,.05);padding:14px 12px 12px}
+.card .doc-title{display:block;margin:2px 0 0;padding-bottom:10px;text-align:center;font-size:21px;font-weight:800;letter-spacing:.3em;text-indent:.3em;color:var(--ink);border-bottom:3px double var(--ink)}
+.doc-date{margin:8px 2px 0;display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted)}
 .doc-date b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .dinfo{margin-top:8px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
 .dinfo:empty{display:none}
@@ -182,9 +187,9 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .dgrp dl div:first-child{border-top:0}
 .dgrp dt{color:var(--muted)}
 .dgrp dd{margin:0;font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
-.doc-empty{margin:14px 0 4px;text-align:center;font-size:14px;color:var(--muted)}
-.dt{width:100%;margin-top:14px;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.dt th,.dt td{padding:9px 3px;text-align:right;white-space:nowrap}
+.doc-empty{margin:10px 0 2px;text-align:center;font-size:14px;color:var(--muted)}
+.dt{width:100%;margin-top:10px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.dt th,.dt td{padding:7px 3px;text-align:right;white-space:nowrap}
 .dt th:first-child,.dt td:first-child{text-align:left;padding-left:2px;white-space:normal}
 .dt th:last-child,.dt td:last-child{padding-right:2px}
 .dt thead th{font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--ink)}
@@ -193,31 +198,31 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .dt .it b{display:block;font-size:14.5px;line-height:1.3}
 .dt .it small{display:block;font-size:11.5px;color:var(--muted)}
 .dt .amt{font-weight:700}
-.dsum{margin:10px 2px 0;display:grid;gap:3px}
+.dsum{margin:8px 2px 0;display:grid;gap:2px}
 .dsum div{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;color:var(--muted)}
 .dsum dt{font-weight:500}
 .dsum dd{margin:0;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .dsum .minus dd{color:var(--bad)}
 .dsum .sub{border-top:1px dashed var(--line);padding-top:3px;margin-top:2px}
-.dtotal{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--green-soft);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.dtotal{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--green-soft);display:flex;justify-content:space-between;align-items:center;gap:8px}
 .dtotal span{font-weight:700;color:var(--green-deep);line-height:1.3}
 .dtotal small{display:block;font-size:11.5px;font-weight:500;color:var(--muted)}
 .dtotal b{font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
-.dbox{margin-top:10px;padding:11px 14px;border:1px solid var(--line);border-radius:10px}
+.dbox{margin-top:8px;padding:9px 12px;border:1px solid var(--line);border-radius:10px}
 .dbox > span{display:block;font-size:12px;font-weight:700;color:var(--muted)}
 .dbox .pm{display:block;font-size:14.5px}
-.dacct{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.dacct{margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}
 .dacct b{display:block;font-size:16.5px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .dacct small{display:block;font-size:13.5px}
 .dbox p{margin:0;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}
 
 /* 복사 · 저장 */
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.reset{background:none;border:0;padding:4px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;font-size:13px;justify-self:center}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.reset{background:none;border:0;padding:2px 4px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;font-size:13px;justify-self:center}
 .reset:hover{color:var(--bad)}
 
 /* 단가 설정 탭 */
-.prow{display:grid;grid-template-columns:92px minmax(0,1fr) 18px;align-items:center;gap:8px;padding:3px 0}
+.prow{display:grid;grid-template-columns:92px minmax(0,1fr) 18px;align-items:center;gap:8px;padding:2px 0}
 .prow b{font-size:15.5px;font-variant-numeric:tabular-nums}
 .prow > span:last-child{font-weight:700;color:var(--muted)}
 .hint{margin:0;text-align:center;font-size:12.5px;color:var(--muted)}
@@ -226,17 +231,17 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .qhead,.qline{display:grid;grid-template-columns:minmax(98px,1.35fr) minmax(0,1fr) minmax(42px,.55fr) minmax(74px,1fr) 20px;gap:3px;align-items:center}
 .qhead{padding:0 0 5px;font-size:12px;font-weight:600;color:var(--muted)}
 .qhead span{padding-left:6px}
-.qr{padding:6px 0;border-top:1px solid var(--line)}
+.qr{padding:5px 0;border-top:1px solid var(--line)}
 .qr:last-child{border-bottom:1px solid var(--line)}
-.qr-name{height:38px;margin-bottom:5px}
-.qline input{height:40px;padding:0 5px;font-variant-numeric:tabular-nums}
+.qr-name{height:36px;margin-bottom:4px}
+.qline input{height:38px;padding:0 5px;font-variant-numeric:tabular-nums}
 /* 규격 고르기: 진짜 select는 투명하게 위에 (글씨 16px라 아이폰에서 화면이 안 커짐), 보이는 글씨는 아래 span */
-.qsel{position:relative;display:block;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236B716D' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 5px center/9px}
+.qsel{position:relative;display:block;height:38px;border:1px solid var(--line);border-radius:10px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236B716D' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 5px center/9px}
 .qsel:focus-within{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
 .qsel-t{position:absolute;inset:0;display:flex;align-items:center;padding:0 14px 0 6px;font-size:14px;letter-spacing:-.3px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;pointer-events:none}
 .qsel-t.dim{color:#A9AEAA}
 .qsel select{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;cursor:pointer}
-.qr-del{width:20px;height:38px;padding:0;border:0;border-radius:6px;background:none;color:var(--muted);font-size:19px;line-height:1}
+.qr-del{width:20px;height:36px;padding:0;border:0;border-radius:6px;background:none;color:var(--muted);font-size:19px;line-height:1}
 .qr-del:hover{background:var(--sand);color:var(--bad)}
 .chk.mini{height:28px;padding:0 9px 0 6px;gap:5px;border-radius:8px;font-size:12.5px;background:#fff}
 .chk.mini .box{width:15px;height:15px;border-radius:4px;font-size:10px}
@@ -245,12 +250,12 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .prev .wait{margin:0;padding:40px 0;text-align:center;font-size:13px;color:var(--muted)}
 
 /* 반응형 — 계산·견적서 탭은 입력(col-in)과 결과(col-out) 두 덩어리 */
-.col-in,.col-out{display:grid;gap:8px;min-width:0;align-content:start}
+.col-in,.col-out{display:grid;gap:6px;min-width:0;align-content:start}
 /* 작은 휴대폰: 여백·글씨를 조금씩 줄여서 한 줄에 들어가게 */
 @media (max-width:380px){
   .top,.tabs{padding-left:12px;padding-right:12px}
   .wrap{padding-left:12px;padding-right:12px}
-  .card{padding:12px}
+  .card{padding:10px}
   .tabs button{font-size:13.5px}
   .card h2 small{font-size:11.5px}
   .opt{font-size:14px}
@@ -258,7 +263,8 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
   .chk{gap:6px;padding:0 8px;font-size:13.5px}
   .acct{gap:8px;padding:5px 10px}
   .acct .an{font-size:14px}
-  .step{grid-template-columns:42px 56px 42px}
+  .step{grid-template-columns:38px 50px 38px}
+  .card.inline{gap:8px}
   .card.items{padding-left:10px;padding-right:10px}
 }
 /* PC·태블릿 가로: 왼쪽 입력, 오른쪽 명세서·미리보기 (따라 내려옴) */
@@ -283,7 +289,6 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 <body>
 <header class="top">
   <h1>시공 계산기</h1>
-  <p>층간소음매트 · 시공 계산 · 거래명세서 · 견적서</p>
 </header>
 
 <nav class="tabs"><div class="tabs-in" role="tablist" aria-label="메뉴">
@@ -331,11 +336,10 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
   <section class="card" aria-labelledby="hBrand">
     <h2 id="hBrand"><span><i>5</i>매트사</span><small>어느 매트사 시공인지</small></h2>
     <div class="opts" id="brandOpts" role="group" aria-labelledby="hBrand"></div>
-    <p class="note" id="brandNote"></p>
   </section>
 
-  <section class="card" aria-labelledby="hDate">
-    <h2 id="hDate"><span><i>6</i>시공일</span><small>거래명세서에 들어갈 날짜</small></h2>
+  <section class="card inline" aria-labelledby="hDate">
+    <h2 id="hDate"><span><i>6</i>시공일</span></h2>
     <div class="date-row"><input id="date" type="date" aria-labelledby="hDate"><button class="opt" type="button" id="todayBtn">오늘</button></div>
   </section>
 
@@ -343,7 +347,7 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
     <h2 id="hPay"><span><i>7</i>결제 방법</span><small>여러 개 체크할 수 있어요</small></h2>
     <div class="checks" id="pays" role="group" aria-labelledby="hPay"></div>
     <div id="acctArea" hidden>
-      <p class="sub-h" id="hAcct">입금 계좌 선택</p>
+      <p class="sub-h" id="hAcct">입금 계좌 <small id="acctTip"></small></p>
       <div class="accts" id="accts" role="group" aria-labelledby="hAcct"></div>
       <div class="acct-in" id="acctManual" hidden>
         <label class="field">은행<input id="mBank" type="text" placeholder="예: 국민은행" autocomplete="off" enterkeyhint="next"></label>
@@ -364,7 +368,7 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 
   <section class="card" aria-labelledby="hMemo">
     <h2 id="hMemo"><span><i>9</i>메모</span><small>명세서에 같이 들어가요</small></h2>
-    <textarea id="memo" rows="3" placeholder="예: 거실, 복도, 주방 시공 / 현금영수증 발행 번호 / 매트 색상" aria-labelledby="hMemo"></textarea>
+    <textarea id="memo" rows="2"placeholder="예: 거실, 복도, 주방 시공 / 현금영수증 발행 번호 / 매트 색상" aria-labelledby="hMemo"></textarea>
   </section>
  </div>
 
@@ -449,7 +453,7 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
     <h2 id="hqItems"><span><i>5</i>견적</span><b class="show" id="qMatShow"></b></h2>
     <div class="opts" id="qModeOpts" role="group" aria-label="견적 방식"></div>
     <p class="note" id="qModeNote"></p>
-    <div id="qRows" style="margin-top:10px"></div>
+    <div id="qRows" style="margin-top:8px"></div>
     <button class="btn add" type="button" id="qAdd">+ 추가</button>
     <datalist id="qColors"></datalist>
   </section>
@@ -729,8 +733,9 @@ function markVat(st, sel) {
   box.querySelector('.vin').classList.toggle('on', st.vat === 'c' && !!pctOf(st.vatC));
 }
 const vatLabel = c => `부가세 ${pctTxt(c.vatRate)}%${c.vatSupport ? ` ${VAT5_NOTE}` : ''}`;
+// 계산 순서(할인 → 부가세)는 합계 줄에 보이니까 안내는 표시 문구가 바뀔 때만
 const vatNote = (c, where) => c.vatIncl ? `${where} "부가세 포함"으로 표시돼요.`
-  : c.vatRate ? `할인까지 뺀 금액에 부가세 ${pctTxt(c.vatRate)}%가 더해져요.${c.vatSupport ? ` "${VAT5_NOTE}"로 표시돼요.` : ''}` : '';
+  : c.vatSupport ? `"${VAT5_NOTE}"로 표시돼요.` : '';
 // 휴대폰 번호는 010-0000-0000 모양으로
 function phone(v) {
   const d = digits(v);
@@ -941,7 +946,6 @@ function update() {
 
   // 4) 매트사 · 5) 시공일 · 7) 부가세
   markOpts($('#brandOpts'), S.brand);
-  $('#brandNote').textContent = c.brand ? `명세서에 ${c.brand.name} 업체 정보와 제품명이 들어가요.` : '';
   if (dateEl.value !== S.date) dateEl.value = S.date;
   markVat(S, '#vatOpts');
   $('#vatShow').textContent = c.vatRate ? `+${fmt(c.vat)}원` : '';
@@ -950,7 +954,12 @@ function update() {
   // 6) 결제 방법 · 계좌
   paysEl.querySelectorAll('.chk').forEach(b => b.setAttribute('aria-pressed', S.pays.includes(b.dataset.k)));
   $('#acctArea').hidden = !S.pays.includes('bank');
-  acctsEl.querySelectorAll('.acct').forEach(b => b.setAttribute('aria-pressed', S.acct === b.dataset.id));
+  // 계좌를 고르면 그 계좌만 남김 — 다시 누르면 선택이 풀리고 목록이 다시 나옴
+  acctsEl.querySelectorAll('.acct').forEach(b => {
+    b.setAttribute('aria-pressed', S.acct === b.dataset.id);
+    b.hidden = !!S.acct && S.acct !== b.dataset.id;
+  });
+  $('#acctTip').textContent = S.acct ? '· 다시 누르면 다른 계좌' : '선택';
   const m = S.manual;
   $('#manualShow').textContent = m.num.trim() ? `${m.bank} ${m.num}`.trim() : '';
   $('#acctManual').hidden = S.acct !== 'manual';
