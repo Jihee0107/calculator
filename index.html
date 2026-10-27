@@ -28,118 +28,130 @@ button,input,textarea,select{font:inherit;color:inherit}
 button{cursor:pointer}
 
 /* 버튼 */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:52px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:var(--paper);font-weight:700;font-size:15.5px;transition:background .15s,opacity .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:48px;padding:0 18px;border-radius:12px;border:1px solid var(--line);background:var(--paper);font-weight:700;font-size:15.5px;transition:background .15s,opacity .15s}
 .btn:disabled{opacity:.45;cursor:not-allowed}
 .btn.primary{background:var(--green);border-color:var(--green);color:#fff}
 .btn.primary:hover{background:var(--green-deep)}
 .btn.primary.done{background:var(--ink);border-color:var(--ink)}
 .btn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
 .btn.dark:hover{background:#000}
-.btn.add{width:100%;height:46px;margin-top:10px;border-style:dashed;background:transparent;color:var(--ink)}
+.btn.add{width:100%;height:40px;margin-top:8px;border-style:dashed;background:transparent;color:var(--ink)}
 .btn.add:hover{background:#fff}
 
 /* 휴대폰 폭 한 줄 — PC에서도 같은 폭으로 가운데에 */
 .top,.tabs,.wrap{max-width:480px;margin:0 auto}
-.top{padding:18px 16px 4px;padding-top:max(18px,env(safe-area-inset-top))}
-.top h1{font-size:19px;margin:0;color:var(--ink);line-height:1.3}
-.top p{margin:0;font-size:13px;color:var(--muted)}
-.wrap{padding:12px 16px 40px;display:grid;gap:12px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-.card h2{font-size:15px;margin:0 0 12px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:8px;line-height:1.3}
+.top{padding:12px 14px 0;padding-top:max(12px,env(safe-area-inset-top))}
+.top h1{font-size:18px;margin:0;color:var(--ink);line-height:1.3}
+.top p{margin:0;font-size:12.5px;color:var(--muted)}
+.wrap{padding:8px 14px 32px;display:grid;gap:8px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.card h2{font-size:15px;margin:0 0 9px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:8px;line-height:1.3}
 .card h2 > span{display:flex;align-items:center;gap:8px}
-.card h2 i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-size:12px;display:grid;place-items:center}
+.card h2 i{flex:none;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-size:12px;display:grid;place-items:center}
 .card h2 small{font-weight:400;color:var(--muted);font-size:12px;text-align:right}
 .card h2 .show{font-size:15.5px;color:var(--green);font-variant-numeric:tabular-nums}
 .card h2 .show.minus{color:var(--bad)}
-.note{margin:8px 2px 0;font-size:12.5px;color:var(--muted)}
+.note{margin:6px 2px 0;font-size:12.5px;color:var(--muted)}
 .note:empty{display:none}
-.sub-h{margin:14px 2px 8px;font-size:13px;font-weight:700;color:var(--ink)}
+.sub-h{margin:10px 2px 6px;font-size:13px;font-weight:700;color:var(--ink)}
 
 /* 탭 — 위에 붙어 있음 */
-.tabs{position:sticky;top:0;z-index:5;background:var(--ground);padding:10px 16px 4px}
+.tabs{position:sticky;top:0;z-index:5;background:var(--ground);padding:8px 14px 2px}
 .tabs-in{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:4px;background:var(--sand);padding:4px;border-radius:12px}
-.tabs button{height:42px;padding:0 2px;border:0;background:none;border-radius:9px;font-size:14.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.tabs button{height:38px;padding:0 2px;border:0;background:none;border-radius:9px;font-size:14.5px;font-weight:700;color:var(--muted);white-space:nowrap}
 .tabs button:hover{color:var(--ink)}
 .tabs button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
 
 /* 입력 칸 */
 input,textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px}
-input,select{height:46px;padding:0 10px}
-textarea{display:block;min-height:96px;padding:10px;line-height:1.5;resize:vertical}
+input,select{height:42px;padding:0 10px}
+textarea{display:block;min-height:72px;padding:10px;line-height:1.5;resize:vertical}
 input:focus,textarea:focus,select:focus{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
 input::placeholder,textarea::placeholder{color:#A9AEAA}
 input:focus::placeholder,textarea:focus::placeholder{color:transparent} /* 누르면 예시 글자 사라짐 */
 .num{text-align:right;font-variant-numeric:tabular-nums}
 input.need{border-color:#D9A93A;background:#FFF8E6}
-.field{display:grid;gap:4px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.field{display:grid;gap:3px;font-size:12.5px;font-weight:600;color:var(--muted)}
 
 /* 1) 매트 선택 — 여러 개 고르기 */
-.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.chip{position:relative;min-height:58px;padding:14px 4px 6px;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.chip{position:relative;min-height:46px;padding:10px 4px 4px;border:1px solid var(--line);border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
 .chip:hover{border-color:var(--hover)}
-.chip b{font-size:16.5px;font-variant-numeric:tabular-nums;line-height:1.3}
-.chip::after{content:'✓';position:absolute;top:5px;right:5px;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:800;line-height:1;color:transparent}
+.chip b{font-size:16px;font-variant-numeric:tabular-nums;line-height:1.3}
+.chip::after{content:'✓';position:absolute;top:4px;right:4px;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:800;line-height:1;color:transparent}
 .chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
 .chip[aria-pressed=true]::after{background:#fff;border-color:#fff;color:var(--green)}
 
 /* 수량: 매트 | − 수량 + */
-.qtys:not(:empty){margin-top:12px}
-.qrow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.qtys:not(:empty){margin-top:8px}
+.qrow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:6px 0;border-top:1px solid var(--line)}
 .qname b{display:block;font-size:16.5px;font-variant-numeric:tabular-nums;line-height:1.3}
 .qname small{display:block;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
 .qname small.no{color:var(--warn-ink)}
 .qname .qa{display:block;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
 .qname .qa:empty{display:none}
-.step{display:grid;grid-template-columns:44px 62px 44px;gap:4px}
-.step button{height:44px;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:22px;line-height:1;color:var(--ink)}
+.step{display:grid;grid-template-columns:40px 60px 40px;gap:4px}
+.step button{height:40px;padding:0;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:22px;line-height:1;color:var(--ink)}
 .step button:active{background:var(--sand)}
-.step input{height:44px;padding:0 4px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
-.pick-hint{margin:12px 0 0;font-size:13px;color:var(--muted);text-align:center}
+.step input{height:40px;padding:0 4px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.pick-hint{margin:8px 0 0;font-size:13px;color:var(--muted);text-align:center}
 
 /* 고르는 버튼 (시공·출장비 / 할인 / 매트사 / 부가세 …) */
 .opts{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:6px}
-.opt{height:46px;padding:0 2px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15px;font-weight:700;white-space:nowrap;transition:background .15s,border-color .15s}
+.opt{height:40px;padding:0 2px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15px;font-weight:700;white-space:nowrap;transition:background .15s,border-color .15s}
 .opt:hover{border-color:var(--hover)}
 .opt[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
-.opts.big .opt{height:54px;font-size:16.5px}
-.custom{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;margin-top:8px;font-weight:700;color:var(--muted)}
+.opts.big .opt{height:46px;font-size:16.5px}
+.custom{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;margin-top:6px;font-weight:700;color:var(--muted)}
+/* 할인 직접 입력: 원 / % 바꾸기 */
+.unit{display:grid;grid-template-columns:46px 46px;height:42px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.unit button{border:0;background:none;font-size:15px;font-weight:700;color:var(--muted)}
+.unit button[aria-pressed=true]{background:var(--green);color:#fff}
+/* 부가세: 버튼 3개 + 옆에 직접(%) 칸 */
+.vat-opts{grid-template-columns:1.25fr 1.05fr 1fr 1fr}
+.vin{display:flex;align-items:center;gap:2px;height:40px;padding:0 9px 0 4px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;color:var(--muted);transition:background .15s,border-color .15s}
+.vin input{flex:1;min-width:0;height:100%;padding:0;border:0;background:none;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.vin input:focus{outline:0}
+.vin:focus-within{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}
+.vin.on{background:var(--green);border-color:var(--green);color:#fff}
+.vin.on input{color:#fff}
 
 /* 합계 (기사님 확인용) */
 .tot{background:var(--green-soft);border-color:#C5DDCF}
 .tot h2{color:var(--green-deep)}
-.tsum{margin:0;display:grid;gap:4px}
+.tsum{margin:0;display:grid;gap:2px}
 .tsum div{display:flex;justify-content:space-between;gap:8px;font-size:14.5px;color:var(--muted)}
 .tsum dd{margin:0;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
 .tsum .minus dd{color:var(--bad)}
 .tsum .sub{border-top:1px dashed #A9C7B6;padding-top:4px;margin-top:2px}
-.tbig{margin-top:10px;padding-top:10px;border-top:1px solid #A9C7B6;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tbig{margin-top:8px;padding-top:8px;border-top:1px solid #A9C7B6;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .tbig span{font-weight:800;color:var(--green-deep)}
 .tbig small{display:block;font-size:12px;font-weight:500;color:var(--muted)}
-.tbig b{font-size:26px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
+.tbig b{font-size:24px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
 
 /* 거래명세서 만들기 구분 */
-.divider{display:flex;align-items:center;gap:10px;margin:10px 4px 0;font-size:13.5px;font-weight:800;color:var(--ink)}
+.divider{display:flex;align-items:center;gap:10px;margin:4px 4px 0;font-size:13.5px;font-weight:800;color:var(--ink)}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:#C9CECA}
 
 /* 날짜 */
 .date-row{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:8px}
-.date-field + .date-field{margin-top:10px}
-input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;line-height:44px;text-align:left;font-variant-numeric:tabular-nums}
+.date-field + .date-field{margin-top:8px}
+input[type=date]{-webkit-appearance:none;appearance:none;display:block;min-width:0;line-height:40px;text-align:left;font-variant-numeric:tabular-nums}
 input[type=date]::-webkit-date-and-time-value{text-align:left}
 
 /* 체크 (결제 방법 · 시공범위) — 여러 개 */
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.chk{display:flex;align-items:center;gap:8px;height:48px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14.5px;font-weight:700;white-space:nowrap;letter-spacing:-.2px;text-align:left;transition:background .15s,border-color .15s}
+.chk{display:flex;align-items:center;gap:8px;height:42px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14.5px;font-weight:700;white-space:nowrap;letter-spacing:-.2px;text-align:left;transition:background .15s,border-color .15s}
 .chk:hover{border-color:var(--hover)}
 .chk .box{flex:none;width:20px;height:20px;border-radius:5px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:800;line-height:1;color:transparent}
 .chk[aria-pressed=true]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:var(--green-soft)}
 .chk[aria-pressed=true] .box{background:var(--green);border-color:var(--green);color:#fff}
 .scopes{grid-template-columns:repeat(4,minmax(0,1fr))}
-.scopes .chk{height:44px;padding:0 8px;gap:6px}
+.scopes .chk{height:38px;padding:0 8px;gap:6px}
 
 /* 입금 계좌 */
 .accts{display:grid;gap:6px}
-.acct{display:grid;grid-template-columns:20px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;min-height:56px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;transition:background .15s,border-color .15s}
+.acct{display:grid;grid-template-columns:20px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;min-height:46px;padding:5px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;transition:background .15s,border-color .15s}
 .acct:hover{border-color:var(--hover)}
 .acct .dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:11px;font-weight:800;line-height:1;color:transparent}
 .acct small{display:block;font-size:12px;color:var(--muted);line-height:1.3}
@@ -147,8 +159,8 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .acct .an{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
 .acct[aria-pressed=true]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:var(--green-soft)}
 .acct[aria-pressed=true] .dot{background:var(--green);border-color:var(--green);color:#fff}
-.acct-in,.cus{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.acct-in{margin-top:10px}
+.acct-in,.cus{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.acct-in{margin-top:8px}
 .acct-in .full,.cus .full{grid-column:1/-1}
 
 /* 단가 없을 때 알림 */
@@ -156,7 +168,7 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .warn button{flex:none;height:34px;padding:0 12px;border:1px solid #D9B65E;border-radius:8px;background:#fff;font-size:13px;font-weight:700;color:var(--warn-ink)}
 
 /* 거래명세서 (화면) */
-.doc{box-shadow:0 2px 12px rgba(0,0,0,.05);padding:20px 18px 18px}
+.doc{box-shadow:0 2px 12px rgba(0,0,0,.05);padding:16px 14px 14px}
 .card .doc-title{display:block;margin:4px 0 0;padding-bottom:12px;text-align:center;font-size:21px;font-weight:800;letter-spacing:.3em;text-indent:.3em;color:var(--ink);border-bottom:3px double var(--ink)}
 .doc-date{margin:10px 2px 0;display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted)}
 .doc-date b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -170,7 +182,7 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .dgrp dl div:first-child{border-top:0}
 .dgrp dt{color:var(--muted)}
 .dgrp dd{margin:0;font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
-.doc-empty{margin:22px 0 6px;text-align:center;font-size:14px;color:var(--muted)}
+.doc-empty{margin:14px 0 4px;text-align:center;font-size:14px;color:var(--muted)}
 .dt{width:100%;margin-top:14px;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .dt th,.dt td{padding:9px 3px;text-align:right;white-space:nowrap}
 .dt th:first-child,.dt td:first-child{text-align:left;padding-left:2px;white-space:normal}
@@ -205,7 +217,7 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .reset:hover{color:var(--bad)}
 
 /* 단가 설정 탭 */
-.prow{display:grid;grid-template-columns:92px minmax(0,1fr) 18px;align-items:center;gap:8px;padding:5px 0}
+.prow{display:grid;grid-template-columns:92px minmax(0,1fr) 18px;align-items:center;gap:8px;padding:3px 0}
 .prow b{font-size:15.5px;font-variant-numeric:tabular-nums}
 .prow > span:last-child{font-weight:700;color:var(--muted)}
 .hint{margin:0;text-align:center;font-size:12.5px;color:var(--muted)}
@@ -216,10 +228,10 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .qhead span{padding-left:6px}
 .qr{padding:6px 0;border-top:1px solid var(--line)}
 .qr:last-child{border-bottom:1px solid var(--line)}
-.qr-name{height:40px;margin-bottom:5px}
-.qline input{height:42px;padding:0 5px;font-variant-numeric:tabular-nums}
+.qr-name{height:38px;margin-bottom:5px}
+.qline input{height:40px;padding:0 5px;font-variant-numeric:tabular-nums}
 /* 규격 고르기: 진짜 select는 투명하게 위에 (글씨 16px라 아이폰에서 화면이 안 커짐), 보이는 글씨는 아래 span */
-.qsel{position:relative;display:block;height:42px;border:1px solid var(--line);border-radius:10px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236B716D' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 5px center/9px}
+.qsel{position:relative;display:block;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236B716D' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 5px center/9px}
 .qsel:focus-within{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
 .qsel-t{position:absolute;inset:0;display:flex;align-items:center;padding:0 14px 0 6px;font-size:14px;letter-spacing:-.3px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;pointer-events:none}
 .qsel-t.dim{color:#A9AEAA}
@@ -233,18 +245,18 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
 .prev .wait{margin:0;padding:40px 0;text-align:center;font-size:13px;color:var(--muted)}
 
 /* 반응형 — 계산·견적서 탭은 입력(col-in)과 결과(col-out) 두 덩어리 */
-.col-in,.col-out{display:grid;gap:12px;min-width:0;align-content:start}
+.col-in,.col-out{display:grid;gap:8px;min-width:0;align-content:start}
 /* 작은 휴대폰: 여백·글씨를 조금씩 줄여서 한 줄에 들어가게 */
 @media (max-width:380px){
   .top,.tabs{padding-left:12px;padding-right:12px}
-  .wrap{padding-left:12px;padding-right:12px;gap:10px}
-  .col-in,.col-out{gap:10px}
-  .card{padding:14px 12px}
+  .wrap{padding-left:12px;padding-right:12px}
+  .card{padding:12px}
   .tabs button{font-size:13.5px}
   .card h2 small{font-size:11.5px}
   .opt{font-size:14px}
+  .unit{grid-template-columns:42px 42px}
   .chk{gap:6px;padding:0 8px;font-size:13.5px}
-  .acct{gap:8px;padding:8px 10px}
+  .acct{gap:8px;padding:5px 10px}
   .acct .an{font-size:14px}
   .step{grid-template-columns:42px 56px 42px}
   .card.items{padding-left:10px;padding-right:10px}
@@ -299,12 +311,12 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
   <section class="card" aria-labelledby="hDisc">
     <h2 id="hDisc"><span><i>3</i>할인</span><b class="show minus" id="discShow"></b></h2>
     <div class="opts" id="discOpts" role="group" aria-labelledby="hDisc"></div>
-    <label class="custom" id="discCustomRow" hidden><input class="num" id="discCustom" type="text" inputmode="numeric" placeholder="금액 입력" autocomplete="off" aria-label="할인 직접 입력(원)" enterkeyhint="done"><span>원</span></label>
+    <div class="custom" id="discCustomRow" hidden><input class="num" id="discCustom" type="text" inputmode="numeric" placeholder="금액 입력" autocomplete="off" aria-label="할인 직접 입력" enterkeyhint="done"><span class="unit" id="discUnit" role="group" aria-label="할인 단위"><button type="button" data-u="won" aria-pressed="true">원</button><button type="button" data-u="pct" aria-pressed="false">%</button></span></div>
   </section>
 
   <section class="card" aria-labelledby="hVat">
     <h2 id="hVat"><span><i>4</i>부가세</span><b class="show" id="vatShow"></b></h2>
-    <div class="opts" id="vatOpts" role="group" aria-labelledby="hVat"></div>
+    <div class="opts vat-opts" id="vatOpts" role="group" aria-labelledby="hVat"></div>
     <p class="note" id="vatNote"></p>
   </section>
 
@@ -451,12 +463,12 @@ input[type=date]::-webkit-date-and-time-value{text-align:left}
   <section class="card" aria-labelledby="hqDisc">
     <h2 id="hqDisc"><span><i>7</i>할인</span><b class="show minus" id="qDiscShow"></b></h2>
     <div class="opts" id="qDiscOpts" role="group" aria-labelledby="hqDisc"></div>
-    <label class="custom" id="qDiscCustomRow" hidden><input class="num" id="qDiscCustom" type="text" inputmode="numeric" placeholder="금액 입력" autocomplete="off" aria-label="할인 직접 입력(원)" enterkeyhint="done"><span>원</span></label>
+    <div class="custom" id="qDiscCustomRow" hidden><input class="num" id="qDiscCustom" type="text" inputmode="numeric" placeholder="금액 입력" autocomplete="off" aria-label="할인 직접 입력" enterkeyhint="done"><span class="unit" id="qDiscUnit" role="group" aria-label="할인 단위"><button type="button" data-u="won" aria-pressed="true">원</button><button type="button" data-u="pct" aria-pressed="false">%</button></span></div>
   </section>
 
   <section class="card" aria-labelledby="hqVat">
     <h2 id="hqVat"><span><i>8</i>부가세</span><b class="show" id="qVatShow"></b></h2>
-    <div class="opts" id="qVatOpts" role="group" aria-labelledby="hqVat"></div>
+    <div class="opts vat-opts" id="qVatOpts" role="group" aria-labelledby="hqVat"></div>
     <p class="note" id="qVatNote"></p>
   </section>
 
@@ -525,7 +537,7 @@ const MATS = [
   { k: '140', size: '140×100', mm: '1400×1000' }
 ];
 /* 기본 단가 (원) — 단가 설정에서 바꾸면 그 값이 저장돼서 계속 쓰임 */
-const DEFAULT_PRICE = { '70': 36000, '80': 50000, '100': 82000, '120': 123000, '120x68': 78000, '140': 123456 };
+const DEFAULT_PRICE = { '70': 36000, '80': 50000, '100': 82000, '120': 123000, '120x68': 78000, '140': 118000 };
 
 /* 매트사 — 공급자 정보 + 제품명 (제품명은 명세서·견적서에만) */
 const BRANDS = [
@@ -548,7 +560,8 @@ const PAYS = [
   { k: 'bill', label: '계산서 발행', doc: '계산서 발행' },
   { k: 'cash', label: '현금영수증 발행', doc: '현금영수증 발행' }
 ];
-/* 부가세 — 포함: 금액 그대로 / 10%·5%: 합계에 더함 (5%는 나머지 5%를 지원) */
+/* 부가세 — 포함: 금액 그대로 / 10%·5%·직접(%): 할인까지 뺀 금액에 더함
+   "(5% 부가세는 지원)"은 5% 추가 버튼을 눌렀을 때만 (직접 5%를 쓰면 안 붙음) */
 const VATS = [
   { k: 'incl', label: '부가세 포함', rate: 0 },
   { k: '10', label: '10% 추가', rate: 10 },
@@ -584,8 +597,8 @@ const dateLong = iso => { const [y, m, d] = iso.split('-').map(Number); return `
 
 /* ===== 저장 — 계산 탭(S) · 단가(PRICE) · 견적서 탭(Q)을 따로. 단가는 지우지 않는 한 계속 남음 ===== */
 const blank = () => ({
-  on: [], qty: {}, fee: '', feeC: '', disc: '', discC: '', brand: '', date: '', dateDay: '',
-  pays: [], acct: '', manual: { bank: '', name: '', num: '' }, vat: '', cus: { name: '', tel: '', addr: '' }, memo: ''
+  on: [], qty: {}, fee: '', feeC: '', disc: '', discC: '', discP: '', discU: 'won', brand: '', date: '', dateDay: '',
+  pays: [], acct: '', manual: { bank: '', name: '', num: '' }, vat: '', vatC: '', cus: { name: '', tel: '', addr: '' }, memo: ''
 });
 let S = blank(), PRICE = { ...DEFAULT_PRICE };
 try {
@@ -596,6 +609,7 @@ try {
   const p = JSON.parse(localStorage.getItem(PRICE_STORE));
   if (p && typeof p === 'object') PRICE = { ...DEFAULT_PRICE, ...p };
 } catch (e) {}
+if (toN(PRICE['140']) === 123456) PRICE['140'] = DEFAULT_PRICE['140']; // 예전 임시 단가(123,456원)가 저장돼 있던 폰은 새 기본값으로
 // 시공일은 기본 오늘. 다른 날 다시 열면 그날로 (지난 날짜가 그대로 남지 않게)
 if (!S.date || S.dateDay !== todayISO()) { S.date = todayISO(); S.dateDay = todayISO(); }
 const saveState = () => { try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {} };
@@ -637,6 +651,86 @@ function markMoney(st, key, optsSel, rowSel, showSel, sign) {
   const n = moneyOf(st, key);
   $(showSel).textContent = n ? `${sign}${fmt(n)}원` : '';
 }
+/* % 입력: 숫자와 소수점 하나(소수 둘째 자리까지), 100까지 */
+function pctClean(v) {
+  let s = String(v || '').replace(/[^\d.]/g, '');
+  const i = s.indexOf('.');
+  if (i >= 0) s = s.slice(0, i + 1) + s.slice(i + 1).replace(/\./g, '').slice(0, 2);
+  s = s.replace(/^0+(?=\d)/, '');
+  return +s > 100 ? '100' : s;
+}
+const pctOf = v => Math.min(100, parseFloat(v) || 0);
+const pctTxt = n => String(+n.toFixed(2));
+
+/* 할인: 빠른 금액 + 직접 입력(원 또는 %). %는 할인 전 금액(매트 합계 + 시공·출장비)에서 계산
+   sel: { opts, row, input, unit, show } — 계산 탭·견적서 탭이 같이 씀 */
+function discField(st, sel, upd) {
+  const input = $(sel.input);
+  const fill = () => {
+    const pct = st.discU === 'pct';
+    input.value = pct ? st.discP : (toN(st.discC) ? fmt(toN(st.discC)) : '');
+    input.inputMode = pct ? 'decimal' : 'numeric';
+    input.placeholder = pct ? '할인율 입력' : '금액 입력';
+  };
+  makeOpts($(sel.opts), [...DISCS.map(v => ({ v: String(v), label: man(v) })), { v: 'c', label: '직접 입력' }],
+    () => st.disc, v => { st.disc = v; upd(); if (v === 'c') input.focus(); });
+  $(sel.unit).addEventListener('click', e => {
+    const b = e.target.closest('button[data-u]');
+    if (!b) return;
+    st.discU = b.dataset.u;
+    fill(); upd(); input.focus();
+  });
+  input.addEventListener('input', () => {
+    if (st.discU === 'pct') { input.value = pctClean(input.value); st.discP = input.value; }
+    else { const n = toN(input.value); input.value = n ? fmt(n) : ''; st.discC = n ? String(n) : ''; }
+    upd();
+  });
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') input.blur(); });
+  fill();
+  return fill; // 새로 작성 뒤 칸 모양(원/%) 되돌릴 때
+}
+const discPct = st => st.disc === 'c' && st.discU === 'pct' ? pctOf(st.discP) : 0;
+const discOf = (st, base) => { const p = discPct(st); return p ? Math.floor(Math.max(0, base) * p / 100) : moneyOf(st, 'disc'); };
+function markDisc(st, sel, amt) {
+  markOpts($(sel.opts), st.disc);
+  $(sel.row).hidden = st.disc !== 'c';
+  $(sel.unit).querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.u === st.discU));
+  const p = discPct(st);
+  $(sel.show).textContent = p ? `${pctTxt(p)}%${amt ? ` · −${fmt(amt)}원` : ''}` : amt ? `−${fmt(amt)}원` : '';
+}
+const discLabel = c => c.discPct ? `할인 ${pctTxt(c.discPct)}%` : '할인';
+
+/* 부가세: 버튼 3개 + 옆 칸에 직접(%) 쓰기 */
+function vatField(st, sel, upd) {
+  const box = $(sel);
+  box.innerHTML = VATS.map(v => `<button class="opt" type="button" data-v="${v.k}" aria-pressed="false">${v.label}</button>`).join('') +
+    '<label class="vin"><input type="text" inputmode="decimal" placeholder="직접" autocomplete="off" aria-label="부가세 직접 입력(%)" enterkeyhint="done"><span>%</span></label>';
+  const input = box.querySelector('input');
+  input.value = st.vatC;
+  box.addEventListener('click', e => {
+    const b = e.target.closest('.opt');
+    if (!b) return;
+    st.vat = st.vat === b.dataset.v ? '' : b.dataset.v;
+    upd();
+  });
+  input.addEventListener('focus', () => { if (st.vatC && st.vat !== 'c') { st.vat = 'c'; upd(); } });
+  input.addEventListener('input', () => {
+    input.value = pctClean(input.value);
+    st.vatC = input.value;
+    if (st.vatC) st.vat = 'c'; else if (st.vat === 'c') st.vat = '';
+    upd();
+  });
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') input.blur(); });
+}
+const vatRateOf = st => st.vat === 'c' ? pctOf(st.vatC) : ((VATS.find(v => v.k === st.vat) || {}).rate || 0);
+function markVat(st, sel) {
+  const box = $(sel);
+  markOpts(box, st.vat);
+  box.querySelector('.vin').classList.toggle('on', st.vat === 'c' && !!pctOf(st.vatC));
+}
+const vatLabel = c => `부가세 ${pctTxt(c.vatRate)}%${c.vatSupport ? ` ${VAT5_NOTE}` : ''}`;
+const vatNote = (c, where) => c.vatIncl ? `${where} "부가세 포함"으로 표시돼요.`
+  : c.vatRate ? `할인까지 뺀 금액에 부가세 ${pctTxt(c.vatRate)}%가 더해져요.${c.vatSupport ? ` "${VAT5_NOTE}"로 표시돼요.` : ''}` : '';
 // 휴대폰 번호는 010-0000-0000 모양으로
 function phone(v) {
   const d = digits(v);
@@ -697,10 +791,11 @@ qtysEl.addEventListener('keydown', e => {
 });
 
 /* 2·3) 시공·출장비 / 할인 · 4) 매트사 · 7) 부가세 */
+const DISC_SEL = { opts: '#discOpts', row: '#discCustomRow', input: '#discCustom', unit: '#discUnit', show: '#discShow' };
 moneyField(S, 'fee', '#feeOpts', '#feeCustom', FEES, () => update());
-moneyField(S, 'disc', '#discOpts', '#discCustom', DISCS, () => update());
+const discFill = discField(S, DISC_SEL, () => update());
 makeOpts($('#brandOpts'), BRANDS.map(b => ({ v: b.id, label: b.name })), () => S.brand, v => { S.brand = v; update(); });
-makeOpts($('#vatOpts'), VATS.map(v => ({ v: v.k, label: v.label })), () => S.vat, v => { S.vat = v; update(); });
+vatField(S, '#vatOpts', () => update());
 
 /* 5) 시공일 — 달력으로 고르기 (기본 오늘) */
 const dateEl = $('#date');
@@ -775,13 +870,13 @@ function compute() {
     items.push({ k: m.k, size: m.size, name: (brand && brand.items[m.k]) || '', qty, price, amt: qty * price });
   });
   const matSum = items.reduce((a, i) => a + i.amt, 0);
-  const fee = moneyOf(S, 'fee'), disc = moneyOf(S, 'disc');
+  // 할인 → 그 금액에 부가세 (할인 %는 매트 합계 + 시공·출장비에서)
+  const fee = moneyOf(S, 'fee'), disc = discOf(S, matSum + fee);
   const sub = Math.max(0, matSum + fee - disc);
-  const v = VATS.find(v => v.k === S.vat);
-  const vatRate = v ? v.rate : 0, vat = Math.floor(sub * vatRate / 100);
+  const vatRate = vatRateOf(S), vat = Math.floor(sub * vatRate / 100);
   const cus = { name: S.cus.name.trim(), tel: S.cus.tel.trim(), addr: S.cus.addr.trim() };
   return {
-    date: dateText(S.date), items, matSum, fee, disc, sub, vatRate, vatIncl: S.vat === 'incl', vat, total: sub + vat, missing,
+    date: dateText(S.date), items, matSum, fee, disc, discPct: discPct(S), sub, vatRate, vatSupport: S.vat === '5', vatIncl: S.vat === 'incl', vat, total: sub + vat, missing,
     brand: brand ? { name: brand.name, ceo: brand.ceo, bizNo: brand.bizNo, tel: brand.tel } : null,
     pays: PAYS.filter(p => S.pays.includes(p.k)).map(p => p.doc),
     acct: S.pays.includes('bank') ? account() : null,
@@ -796,11 +891,11 @@ function sumLines(c, minus = '−') {
   if (c.fee || c.disc) {
     if (c.items.length) L.push(['매트 합계', `${fmt(c.matSum)}원`]);
     if (c.fee) L.push(['시공·출장비', `+${fmt(c.fee)}원`]);
-    if (c.disc) L.push(['할인', `${minus}${fmt(c.disc)}원`, 'minus']);
+    if (c.disc) L.push([discLabel(c), `${minus}${fmt(c.disc)}원`, 'minus']);
   }
   if (c.vatRate) {
     L.push(['공급가액', `${fmt(c.sub)}원`, 'sub']);
-    L.push([`부가세 ${c.vatRate}%${c.vatRate === 5 ? ` ${VAT5_NOTE}` : ''}`, `+${fmt(c.vat)}원`]);
+    L.push([vatLabel(c), `+${fmt(c.vat)}원`]);
   }
   return L;
 }
@@ -833,13 +928,13 @@ function update() {
 
   // 2·3) 시공·출장비 / 할인
   markMoney(S, 'fee', '#feeOpts', '#feeCustomRow', '#feeShow', '+');
-  markMoney(S, 'disc', '#discOpts', '#discCustomRow', '#discShow', '−');
+  markDisc(S, DISC_SEL, c.disc);
 
   // 합계 (기사님 확인용)
   const tl = [['매트 합계', `${fmt(c.matSum)}원`]];
   if (c.fee) tl.push(['시공·출장비', `+${fmt(c.fee)}원`]);
-  if (c.disc) tl.push(['할인', `−${fmt(c.disc)}원`, 'minus']);
-  if (c.vatRate) tl.push(['합계', `${fmt(c.sub)}원`, 'sub'], [`부가세 ${c.vatRate}%`, `+${fmt(c.vat)}원`]);
+  if (c.disc) tl.push([discLabel(c), `−${fmt(c.disc)}원`, 'minus']);
+  if (c.vatRate) tl.push(['합계', `${fmt(c.sub)}원`, 'sub'], [`부가세 ${pctTxt(c.vatRate)}%`, `+${fmt(c.vat)}원`]);
   $('#totLines').innerHTML = tl.map(([t, v, cls]) => `<div class="${cls || ''}"><dt>${t}</dt><dd>${v}</dd></div>`).join('');
   $('#totLabel').innerHTML = c.vatRate ? '최종 금액' : `합계${c.vatIncl ? '<small>부가세 포함</small>' : ''}`;
   $('#totBig').textContent = `${fmt(c.total)}원`;
@@ -848,11 +943,9 @@ function update() {
   markOpts($('#brandOpts'), S.brand);
   $('#brandNote').textContent = c.brand ? `명세서에 ${c.brand.name} 업체 정보와 제품명이 들어가요.` : '';
   if (dateEl.value !== S.date) dateEl.value = S.date;
-  markOpts($('#vatOpts'), S.vat);
+  markVat(S, '#vatOpts');
   $('#vatShow').textContent = c.vatRate ? `+${fmt(c.vat)}원` : '';
-  $('#vatNote').textContent = c.vatIncl ? '명세서 합계 금액에 "부가세 포함"으로 표시돼요.'
-    : c.vatRate === 10 ? '합계에 부가세 10%가 더해져요.'
-    : c.vatRate === 5 ? `합계에 부가세 5%가 더해지고, 명세서에 "${VAT5_NOTE}"로 표시돼요.` : '';
+  $('#vatNote').textContent = vatNote(c, '명세서 합계 금액에');
 
   // 6) 결제 방법 · 계좌
   paysEl.querySelectorAll('.chk').forEach(b => b.setAttribute('aria-pressed', S.pays.includes(b.dataset.k)));
@@ -1269,9 +1362,10 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && !sheet.hid
 /* 새로 작성: 이번 현장 내용만 지움 (단가·매트사·입금 계좌는 그대로, 시공일은 오늘로) */
 $('#resetBtn').addEventListener('click', () => {
   if (!confirm('매트·수량·시공비·할인·결제 방법·부가세·고객 정보·메모를 모두 지울까요?\n(단가·매트사·입금 계좌는 그대로 남아요)')) return;
-  Object.assign(S, { on: [], qty: {}, fee: '', feeC: '', disc: '', discC: '', pays: [], vat: '', cus: { name: '', tel: '', addr: '' }, memo: '', date: todayISO(), dateDay: todayISO() });
+  Object.assign(S, { on: [], qty: {}, fee: '', feeC: '', disc: '', discC: '', discP: '', discU: 'won', pays: [], vat: '', vatC: '', cus: { name: '', tel: '', addr: '' }, memo: '', date: todayISO(), dateDay: todayISO() });
   qtysEl.querySelectorAll('.qin').forEach(i => { i.value = ''; });
-  ['#feeCustom', '#discCustom', '#cName', '#cTel', '#cAddr', '#memo'].forEach(s => { $(s).value = ''; });
+  ['#feeCustom', '#vatOpts .vin input', '#cName', '#cTel', '#cAddr', '#memo'].forEach(s => { $(s).value = ''; });
+  discFill();
   update();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -1360,7 +1454,7 @@ const THEMES = {
 const qRow = () => ({ name: '', size: '', color: '', qty: '', price: '', pm: false });
 const qBlank = () => ({
   type: 'quote', brand: '', d1: '', d1Day: '', d2: '', cus: { addr: '', name: '', tel: '' }, scope: [], scopeEtc: '',
-  mode: 'prod', rows: [qRow()], fee: '', feeC: '', disc: '', discC: '', vat: '', sumAll: true, region: 'metro'
+  mode: 'prod', rows: [qRow()], fee: '', feeC: '', disc: '', discC: '', discP: '', discU: 'won', vat: '', vatC: '', sumAll: true, region: 'metro'
 });
 let Q = qBlank();
 try {
@@ -1380,9 +1474,10 @@ makeOpts($('#qTypeOpts'), [{ v: 'quote', label: '견적서' }, { v: 'contract', 
 makeOpts($('#qBrandOpts'), BRANDS.map(b => ({ v: b.id, label: b.name })), () => Q.brand, v => { Q.brand = v; qUpdate(); });
 makeOpts($('#qRegionOpts'), REGIONS, () => Q.region, v => { Q.region = v; qUpdate(); }, false);
 makeOpts($('#qModeOpts'), [{ v: 'prod', label: '시공상품' }, { v: 'scope', label: '시공범위' }], () => Q.mode, v => { Q.mode = v; renderRows(); qUpdate(); }, false);
+const Q_DISC_SEL = { opts: '#qDiscOpts', row: '#qDiscCustomRow', input: '#qDiscCustom', unit: '#qDiscUnit', show: '#qDiscShow' };
 moneyField(Q, 'fee', '#qFeeOpts', '#qFeeCustom', FEES, () => qUpdate());
-moneyField(Q, 'disc', '#qDiscOpts', '#qDiscCustom', DISCS, () => qUpdate());
-makeOpts($('#qVatOpts'), VATS.map(v => ({ v: v.k, label: v.label })), () => Q.vat, v => { Q.vat = v; qUpdate(); });
+const qDiscFill = discField(Q, Q_DISC_SEL, () => qUpdate());
+vatField(Q, '#qVatOpts', () => qUpdate());
 $('#qSumChk').addEventListener('click', () => { Q.sumAll = !Q.sumAll; qUpdate(); });
 
 /* 2) 날짜 */
@@ -1500,9 +1595,9 @@ function qCompute() {
     if (!qty && !r.size && !name) return; // 빈 줄은 빼기
     rows.push({ name, size: mmOf(r.size), color: r.color.trim(), qty, price, amt: qty * price });
   });
-  const matSum = rows.reduce((a, r) => a + r.amt, 0), fee = moneyOf(Q, 'fee'), disc = moneyOf(Q, 'disc');
-  const v = VATS.find(v => v.k === Q.vat), vatRate = v ? v.rate : 0;
-  const withVat = n => { const sub = Math.max(0, n), vat = Math.floor(sub * vatRate / 100); return { sub, vat, total: sub + vat }; };
+  // 할인 먼저 → 할인된 금액에 부가세. 할인 %는 그 금액(매트 + 시공·출장비)에서
+  const matSum = rows.reduce((a, r) => a + r.amt, 0), fee = moneyOf(Q, 'fee'), vatRate = vatRateOf(Q);
+  const withVat = base => { const disc = discOf(Q, base), sub = Math.max(0, base - disc), vat = Math.floor(sub * vatRate / 100); return { disc, sub, vat, total: sub + vat }; };
   const etc = Q.scopeEtc.trim();
   return {
     type: Q.type, mode: Q.mode, theme: b ? b.id : 'none',
@@ -1510,10 +1605,10 @@ function qCompute() {
     d1: dateText(Q.d1), d1Long: dateLong(Q.d1), d2: Q.d2 ? dateText(Q.d2) : '',
     cus: { addr: Q.cus.addr.trim(), name: Q.cus.name.trim(), tel: Q.cus.tel.trim() },
     scope: SCOPES.filter(s => Q.scope.includes(s)).map(s => s === '기타' && etc ? `기타(${etc})` : s),
-    rows, matSum, fee, disc, vatRate, vatIncl: Q.vat === 'incl', sumAll: Q.sumAll,
-    ...withVat(matSum + fee - disc),
+    rows, matSum, fee, discPct: discPct(Q), vatRate, vatSupport: Q.vat === '5', vatIncl: Q.vat === 'incl', sumAll: Q.sumAll,
+    ...withVat(matSum + fee),
     // 합계 안 할 때: 매트(줄)마다 따로 — 그 매트 금액 + 시공·출장비 − 할인 (+ 부가세)
-    opts: rows.filter(r => r.amt).map(r => ({ label: [r.name, r.size].filter(Boolean).join(' '), amt: r.amt, ...withVat(r.amt + fee - disc) })),
+    opts: rows.filter(r => r.amt).map(r => ({ label: [r.name, r.size].filter(Boolean).join(' '), amt: r.amt, ...withVat(r.amt + fee) })),
     notice: Q.type === 'quote' ? qNotice(b) : null,
     contract: Q.type === 'contract' ? CONTRACT(b ? b.name : '') : null
   };
@@ -1524,18 +1619,17 @@ function qSums(c, minus = '−') {
   if (c.fee || c.disc) {
     if (c.rows.length) L.push(['매트 합계', `${fmt(c.matSum)}원`]);
     if (c.fee) L.push(['시공·출장비', `+${fmt(c.fee)}원`]);
-    if (c.disc) L.push(['할인', `${minus}${fmt(c.disc)}원`, 'minus']);
+    if (c.disc) L.push([discLabel(c), `${minus}${fmt(c.disc)}원`, 'minus']);
   }
-  if (c.vatRate) L.push(['공급가액', `${fmt(c.sub)}원`, 'sub'], [qVatLabel(c), `+${fmt(c.vat)}원`]);
+  if (c.vatRate) L.push(['공급가액', `${fmt(c.sub)}원`, 'sub'], [vatLabel(c), `+${fmt(c.vat)}원`]);
   return L;
 }
-const qVatLabel = c => `부가세 ${c.vatRate}%${c.vatRate === 5 ? ` ${VAT5_NOTE}` : ''}`;
 /* 매트별 금액 풀이: 매트 2,500,000원 + 시공·출장비 100,000원 − 할인 30,000원 + 부가세 10% 257,000원 */
 function qOptText(c, o, minus = '−') {
   return [`매트 ${fmt(o.amt)}원`,
     ...(c.fee ? [`+ 시공·출장비 ${fmt(c.fee)}원`] : []),
-    ...(c.disc ? [`${minus} 할인 ${fmt(c.disc)}원`] : []),
-    ...(c.vatRate ? [`+ 부가세 ${c.vatRate}% ${fmt(o.vat)}원${c.vatRate === 5 ? ` ${VAT5_NOTE}` : ''}`] : [])].join(' ');
+    ...(o.disc ? [`${minus} ${discLabel(c)} ${fmt(o.disc)}원`] : []),
+    ...(c.vatRate ? [`+ 부가세 ${pctTxt(c.vatRate)}% ${fmt(o.vat)}원${c.vatSupport ? ` ${VAT5_NOTE}` : ''}`] : [])].join(' ');
 }
 const qTotName = c => c.sumAll ? (c.type === 'quote' ? '총 견적 금액' : '총 계약 금액')
   : `${c.mode === 'scope' ? '시공범위별' : '상품별'} ${c.type === 'quote' ? '견적' : '계약'} 금액`;
@@ -1567,13 +1661,11 @@ function qUpdate() {
   $('#qMatShow').textContent = c.matSum ? `${fmt(c.matSum)}원` : '';
 
   markMoney(Q, 'fee', '#qFeeOpts', '#qFeeCustomRow', '#qFeeShow', '+');
-  markMoney(Q, 'disc', '#qDiscOpts', '#qDiscCustomRow', '#qDiscShow', '−');
+  markDisc(Q, Q_DISC_SEL, c.sumAll ? c.disc : 0);
   // 8) 부가세
-  markOpts($('#qVatOpts'), Q.vat);
+  markVat(Q, '#qVatOpts');
   $('#qVatShow').textContent = c.vatRate && c.sumAll ? `+${fmt(c.vat)}원` : '';
-  $('#qVatNote').textContent = c.vatIncl ? `${typeName()}에 "부가세 포함"으로 표시돼요.`
-    : c.vatRate === 10 ? '금액에 부가세 10%가 더해져요.'
-    : c.vatRate === 5 ? `금액에 부가세 5%가 더해지고, "${VAT5_NOTE}"로 표시돼요.` : '';
+  $('#qVatNote').textContent = vatNote(c, `${typeName()}에`);
 
   // 합계 체크: 모든 매트를 더한 총액 / 안 하면 매트마다 따로 (+ 시공·출장비·할인·부가세)
   $('#qSumChk').setAttribute('aria-pressed', Q.sumAll);
@@ -1895,8 +1987,9 @@ qImgBtn.addEventListener('click', async () => {
 /* 새로 작성: 고객·시공범위·견적 줄·금액·날짜만 지움 (종류·업체·지역·견적 방식은 그대로) */
 $('#qResetBtn').addEventListener('click', () => {
   if (!confirm(`공급받는 자·시공범위·견적·시공비·할인·부가세를 모두 지울까요?\n(${typeName()}·업체·지역은 그대로 남아요)`)) return;
-  Object.assign(Q, { d1: todayISO(), d1Day: todayISO(), d2: '', cus: { addr: '', name: '', tel: '' }, scope: [], scopeEtc: '', rows: [qRow()], fee: '', feeC: '', disc: '', discC: '', vat: '' });
-  ['#qD2', '#qAddr', '#qName', '#qTel', '#qEtc', '#qFeeCustom', '#qDiscCustom'].forEach(s => { $(s).value = ''; });
+  Object.assign(Q, { d1: todayISO(), d1Day: todayISO(), d2: '', cus: { addr: '', name: '', tel: '' }, scope: [], scopeEtc: '', rows: [qRow()], fee: '', feeC: '', disc: '', discC: '', discP: '', discU: 'won', vat: '', vatC: '' });
+  ['#qD2', '#qAddr', '#qName', '#qTel', '#qEtc', '#qFeeCustom', '#qVatOpts .vin input'].forEach(s => { $(s).value = ''; });
+  qDiscFill();
   renderRows(); qUpdate();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
